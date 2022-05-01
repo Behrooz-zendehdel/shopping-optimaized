@@ -1,11 +1,10 @@
 .mainNavigation {
   width: 100%;
   height: 60px;
-  background-color: #dbeafe;
+  background-color: #e0e7ff;
   display: flex;
   justify-content: space-between;
-  padding: 30px;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  padding:  0 50px;
 }
 .mainNavigation ul {
   display: flex;
@@ -19,12 +18,8 @@
   align-items: center;
   text-align: center;
 }
-.mainNavigation ul li a {
-  color: #7c3aed;
-}
-.mainNavigation ul li a:hover {
-  padding: 7px 10px;
-  background-color: #8b5cf6;
+.signin a {
+  padding: 10px 15px;
+  background-color: #4338ca;
   color: #fff;
-  border-radius: 5px;
 }

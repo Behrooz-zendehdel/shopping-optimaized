@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./navigation.css";
-import { BiLogIn } from "react-icons/bi";
+import { BiLogIn, BiCaretDown } from "react-icons/bi";
 
 const Navigation = () => {
   return (
@@ -8,26 +8,37 @@ const Navigation = () => {
       <nav className="mainNavigation">
         <ul>
           <div>
-            <span>logo</span>
+            <span style={{ fontWeight: "bold" }}>BZ</span>
           </div>
         </ul>
         <ul>
           <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/shop">Shop</Link>
-          </li>
-          <li>
-            <Link to="/Login">
-              <BiLogIn />
-              Login
+            <Link to="/">
+              Home <BiCaretDown />
             </Link>
           </li>
           <li>
-            <Link to="/logout">
-              Exit <BiLogIn />
+            <Link to="/product">
+              product <BiCaretDown />
             </Link>
+          </li>
+          <li>
+            <Link to="/Blog">
+              Blog <BiCaretDown />
+            </Link>
+          </li>
+          <li>
+            <Link to="/pricing">
+              Pricing <BiCaretDown />
+            </Link>
+          </li>
+        </ul>
+        <ul>
+          <li className="signin">
+            <Link to="/signin">SignIn</Link>
+          </li>
+          <li className="signup">
+            <Link to="/signup">SignUp</Link>
           </li>
         </ul>
       </nav>
