@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./navigation.css";
-import { BiLogIn, BiCaretDown } from "react-icons/bi";
+import { BiCart, BiCaretDown } from "react-icons/bi";
 
 const Navigation = () => {
   return (
@@ -28,8 +28,8 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <Link to="/pricing">
-              Pricing <BiCaretDown />
+            <Link to="/buy">
+              <BiCart />
             </Link>
           </li>
         </ul>

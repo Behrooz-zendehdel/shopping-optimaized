@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <Layout>
       <div className="container">
-        <section className="section-title">
+        <section className="section-title container">
           <div className="title">
             <h1 className="title-header">
               Managing business
@@ -19,8 +19,10 @@ const HomePage = () => {
               soloution.Meet the right platform to help realize.
             </p>
             <div className="btn-title">
-              <button className="btn ">Get Started</button>
-              <button className="btn">See How it Works</button>
+              <button className="btnhome ">Get Started</button>
+              <button className="btnhome">
+                See How it Works
+              </button>
             </div>
           </div>
         </section>
@@ -33,6 +35,7 @@ const HomePage = () => {
             />
           </div>
         </section>
+        <section></section>
       </div>
     </Layout>
   );
