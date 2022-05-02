@@ -1,9 +1,14 @@
 import Layout from "../Layout/Layout";
 import * as data from "../data";
 import "./productpage.css";
+import { useProductActions } from "../Providers/ProductProvider";
+
 const ProductPage = () => {
+  const dispatch = useProductActions();
+
   const addProductHandler = (product) => {
     console.log(product);
+    dispatch({ type: "ADD_TO_CART", payload: product });
   };
   return (
     <Layout>
@@ -20,7 +25,10 @@ const ProductPage = () => {
                   <p style={{ color: "green", fontWeight: "bold" }}>
                     {product.price} $
                   </p>
-                  <button className="btn" onClick={addProductHandler(product)}>
+                  <button
+                    className="btn"
+                    onClick={() => addProductHandler(product)}
+                  >
                     add to cart
                   </button>
                 </div>

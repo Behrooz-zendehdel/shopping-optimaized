@@ -29,7 +29,7 @@ const Navigation = () => {
           </li>
           <li>
             <Link to="/buy">
-              <BiCart />
+              <BiCart style={{ width: "30px", height: "30px" }} />
             </Link>
           </li>
         </ul>

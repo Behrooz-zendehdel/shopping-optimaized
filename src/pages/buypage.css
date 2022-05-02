@@ -1,0 +1,27 @@
+.productItemList {
+  display: flex;
+  border: 1px solid #ccc;
+  background-color: red;
+  flex-direction: column;
+  max-width: 1170px;
+}
+.productItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productItem .productImage {
+  width: 100px;
+  height: 100px;
+}
+.productItem .productImage img {
+  width: 100%;
+  height: auto;
+}
+.productSummery {
+  display: flex;
+  border: 1px solid #ccc;
+  background-color: red;
+  flex-direction: column;
+  max-width: 1170px;
+}

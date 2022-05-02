@@ -34,4 +34,12 @@
   color: #fff;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+.buying {
+  margin-top: 200px;
+}
+.buying h1 {
+  font-size: 25px;
+  margin-bottom: 15px;
 }
