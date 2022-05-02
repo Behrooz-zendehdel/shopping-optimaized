@@ -1,14 +1,17 @@
 .productItemList {
   display: flex;
   border: 1px solid #ccc;
-  background-color: red;
+  background-color: #fff;
   flex-direction: column;
   max-width: 1170px;
+  flex: 1;
+  padding: 1rem;
 }
 .productItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #ccc;
 }
 .productItem .productImage {
   width: 100px;
@@ -21,7 +24,18 @@
 .productSummery {
   display: flex;
   border: 1px solid #ccc;
-  background-color: red;
+  background-color: #fff;
   flex-direction: column;
   max-width: 1170px;
+  width: 30%;
+  margin-left: 2rem;
+  padding: 1rem;
+}
+.productCenter {
+  display: flex;
+  width: 90vw;
+  justify-content: center;
+  margin-top: 4rem;
+}
+.productCenter .productItemList {
 }

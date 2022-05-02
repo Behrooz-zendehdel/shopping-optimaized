@@ -6,6 +6,8 @@
   justify-content: space-between;
   padding: 0 50px;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 .mainNavigation ul {
   display: flex;
