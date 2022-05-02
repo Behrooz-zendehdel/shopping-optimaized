@@ -1,46 +1,55 @@
 const addProduct = (state, action) => {
-  const updatedProduct = [...state.product];
-  const UpdatedItemIndex = updatedProduct.findIndex(
+  const updatedCart = [...state.cart];
+  const UpdatedItemIndex = updatedCart.findIndex(
     (item) => item.id === action.payload.id
   );
   if (UpdatedItemIndex < 0) {
-    updatedProduct.push({ ...action.payload, quantity: 1 });
+    updatedCart.push({ ...action.payload, quantity: 1 });
   } else {
-    const updatedItem = { ...updatedProduct[UpdatedItemIndex] };
+    const updatedItem = { ...updatedCart[UpdatedItemIndex] };
     updatedItem.quantity++;
-    updatedProduct[UpdatedItemIndex] = updatedItem;
+    updatedCart[UpdatedItemIndex] = updatedItem;
   }
   return {
     ...state,
-    product: updatedProduct,
-    total: state.total + action.payload.price,
+    cart: updatedCart,
+    total: state.total + action.payload.offPrice,
   };
 };
 const removeProduct = (state, action) => {
-  const updatedProduct = [...state.product];
-  const UpdatedItemIndex = updatedProduct.findIndex(
+  const updatedCart = [...state.cart];
+  const UpdatedItemIndex = updatedCart.findIndex(
     (item) => item.id === action.payload.id
   );
-  const updatedItem = { ...updatedProduct[UpdatedItemIndex] };
+  const updatedItem = { ...updatedCart[UpdatedItemIndex] };
   if (updatedItem.quantity === 1) {
-    const filteredProduct = updatedProduct.filter(
+    const filteredProduct = updatedCart.filter(
       (item) => item.id !== action.payload.id
     );
     return {
       ...state,
-      product: filteredProduct,
-      total: state.total - action.payload.price,
+      cart: filteredProduct,
+      total: state.total - action.payload.offPrice,
     };
   } else {
     updatedItem.quantity--;
-    updatedProduct[UpdatedItemIndex] = updatedItem;
+    updatedCart[UpdatedItemIndex] = updatedItem;
     return {
       ...state,
-      product: updatedProduct,
-      total: state.total - action.payload.price,
+      cart: updatedCart,
+      total: state.total - action.payload.offPrice,
     };
   }
 };
+
+// const deletedProduct = (state, action) => {
+//   const updatedCart = [...state.cart];
+//   const UpdatedItemIndex = updatedCart.findIndex(
+//     (item) => item.id === action.payload.id
+//   );
+//   const deleteProduct = state.filter((item) => item.id !== action.payload.id);
+//   return { ...state, cart: deleteProduct };
+// };
 
 const productReducer = (state, action) => {
   switch (action.type) {
@@ -49,6 +58,8 @@ const productReducer = (state, action) => {
 
     case "REMOVE_PRODUCT":
       return removeProduct(state, action);
+    // case "DELETE_PRODUCT":
+    //   return deletedProduct(state, action);
 
     default:
       return state;

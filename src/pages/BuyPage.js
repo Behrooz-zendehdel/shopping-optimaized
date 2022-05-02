@@ -1,12 +1,13 @@
 import Layout from "../Layout/Layout";
-import { useProduct, useProductActions } from "../Providers/ProductProvider";
+import { useCart, useCartActions } from "../Providers/ProductProvider";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./buypage.css";
 const BuyPage = () => {
-  const productState = useProduct();
-  const { product, total } = productState;
-  const dispatch = useProductActions();
-  if (!product.length)
+  const cartState = useCart();
+  const { cart, total } = cartState;
+  const dispatch = useCartActions();
+  if (!cart.length)
     return (
       <Layout>
         <main className="buying">
@@ -24,12 +25,19 @@ const BuyPage = () => {
   const decHandler = (productItem) => {
     dispatch({ type: "REMOVE_PRODUCT", payload: productItem });
   };
+
+  // const deleteHanlder = (productItem) => {
+  //   toast.error(`${cart.name} add to cart`);
+
+  //   dispatch({ type: "DELETE_PRODUCT", payload: productItem });
+  // };
+
   return (
     <Layout>
       <main className="container">
         <section className="productCenter">
           <section className="productItemList">
-            {product.map((item) => {
+            {cart.map((item) => {
               return (
                 <div className="productItem">
                   <div className="productImage">
@@ -38,9 +46,15 @@ const BuyPage = () => {
                   <div> {item.name}</div>
                   <div> {item.price * item.quantity}</div>
                   <div>
-                    <button onClick={() => decHandler(item)}>remove</button>
+                    <button onClick={() => decHandler(item)}>-</button>
                     <button>{item.quantity}</button>
-                    <button onClick={() => incHandler(item)}>add</button>
+                    <button onClick={() => incHandler(item)}>+</button>
+                    {/* <button
+                      onClick={() => deleteHanlder(item)}
+                      className="delete btn"
+                    >
+                      delete
+                    </button> */}
                   </div>
                 </div>
               );

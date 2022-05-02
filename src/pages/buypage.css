@@ -39,3 +39,7 @@
 }
 .productCenter .productItemList {
 }
+.delete {
+  margin-left: 10px;
+  background-color: red;
+}

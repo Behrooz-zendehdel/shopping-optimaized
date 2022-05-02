@@ -7,11 +7,14 @@ import BuyPage from "./pages/BuyPage";
 import SignInPage from "./pages/SingInPage";
 import SignUpPage from "./pages/SignUpPage";
 import ProductProvider from "./Providers/ProductProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <BrowserRouter>
       <ProductProvider>
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product" element={<ProductPage />} />

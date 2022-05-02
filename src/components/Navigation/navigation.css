@@ -6,13 +6,12 @@
   justify-content: space-between;
   padding: 0 50px;
   align-items: center;
-  position: fixed;
-  top: 0;
 }
 .mainNavigation ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .mainNavigation ul li {
   display: flex;
@@ -25,4 +24,13 @@
   padding: 10px 15px;
   background-color: #4338ca;
   color: #fff;
+}
+.shownumber {
+  padding: 1px 4px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 3px;
+  top: -2px;
 }

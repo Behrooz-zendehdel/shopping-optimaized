@@ -1,26 +1,26 @@
 import { createContext, useContext, useReducer } from "react";
 import ProductReducer from "./productReducer";
 
-const ProductContext = createContext();
-const ProductContextDispatcher = createContext();
+const CartContext = createContext();
+const CartContextDispatcher = createContext();
 
 const initailState = {
-  product: [],
+  cart: [],
   total: 0,
 };
 
 const ProductProvider = ({ children }) => {
-  const [product, dispatch] = useReducer(ProductReducer, initailState);
+  const [cart, dispatch] = useReducer(ProductReducer, initailState);
   return (
-    <ProductContext.Provider value={product}>
-      <ProductContextDispatcher.Provider value={dispatch}>
+    <CartContext.Provider value={cart}>
+      <CartContextDispatcher.Provider value={dispatch}>
         {children}
-      </ProductContextDispatcher.Provider>
-    </ProductContext.Provider>
+      </CartContextDispatcher.Provider>
+    </CartContext.Provider>
   );
 };
 
 export default ProductProvider;
 
-export const useProduct = () => useContext(ProductContext);
-export const useProductActions = () => useContext(ProductContextDispatcher);
+export const useCart = () => useContext(CartContext);
+export const useCartActions = () => useContext(CartContextDispatcher);

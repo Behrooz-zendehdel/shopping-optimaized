@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import "./navigation.css";
 import { BiCart, BiCaretDown } from "react-icons/bi";
+import { useCart } from "../../Providers/ProductProvider";
 
 const Navigation = () => {
+  const { cart } = useCart();
   return (
     <header>
       <nav className="mainNavigation">
@@ -30,6 +32,7 @@ const Navigation = () => {
           <li>
             <Link to="/buy">
               <BiCart style={{ width: "30px", height: "30px" }} />
+              <span className="shownumber">{cart.length}</span>
             </Link>
           </li>
         </ul>
