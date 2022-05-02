@@ -1,7 +1,6 @@
 import Layout from "../Layout/Layout";
 import { useCart, useCartActions } from "../Providers/ProductProvider";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import "./buypage.css";
 const BuyPage = () => {
   const cartState = useCart();
@@ -44,11 +43,11 @@ const BuyPage = () => {
                     <img src={item.image} alt="item.name" />
                   </div>
                   <div> {item.name}</div>
-                  <div> {item.price * item.quantity}</div>
+                  <div> {item.price * item.quantity} $</div>
                   <div>
-                    <button onClick={() => decHandler(item)}>-</button>
-                    <button>{item.quantity}</button>
-                    <button onClick={() => incHandler(item)}>+</button>
+                    <button onClick={() => decHandler(item)} className="btnGroup">-</button>
+                    <button className="btnGroup">{item.quantity}</button>
+                    <button onClick={() => incHandler(item)} className="btnGroup">+</button>
                     {/* <button
                       onClick={() => deleteHanlder(item)}
                       className="delete btn"
@@ -60,10 +59,7 @@ const BuyPage = () => {
               );
             })}
           </section>
-          <section className="productSummery">
-            <h4>product Summery</h4>
-            <div>{total} $</div>
-          </section>
+          <ProductSummery total={total} cart={cart} />
         </section>
       </main>
     </Layout>
@@ -71,3 +67,31 @@ const BuyPage = () => {
 };
 
 export default BuyPage;
+
+const ProductSummery = ({ total, cart }) => {
+  const originalTotalPrice = cart.length
+    ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0)
+    : 0;
+  return (
+    <section className="productSummery">
+      <h4 style={{ marginBottom: "20px" }}>product Summery</h4>
+      <div className="productItemSummery">
+        <p>total price</p>
+        <p>{originalTotalPrice}</p>
+      </div>
+      <div className="productItemSummery hr">
+        <p>discount price</p>
+        <p>{originalTotalPrice - total} $</p>
+      </div>
+      <div className="productItemSummery ">
+        <p>net price</p>
+        <p>{total}$</p>
+      </div>
+      <Link to="/checkout">
+        <button className="btn" style={{ marginTop: "20px", width: "100%  " }}>
+          checkout
+        </button>
+      </Link>
+    </section>
+  );
+};

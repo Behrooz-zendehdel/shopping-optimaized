@@ -20,10 +20,14 @@
   align-items: center;
   text-align: center;
 }
+.mainNavigation ul li a:hover {
+  color: #4338ca;
+  font-weight: bold;
+}
 .signin a {
   padding: 10px 15px;
   background-color: #4338ca;
-  color: #fff;
+  color: #fff !important;
 }
 .shownumber {
   padding: 1px 4px;

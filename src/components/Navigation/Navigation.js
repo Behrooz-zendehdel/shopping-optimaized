@@ -12,23 +12,6 @@ const Navigation = () => {
           <div>
             <span style={{ fontWeight: "bold" }}>BZ</span>
           </div>
-        </ul>
-        <ul>
-          <li>
-            <Link to="/">
-              Home <BiCaretDown />
-            </Link>
-          </li>
-          <li>
-            <Link to="/product">
-              product <BiCaretDown />
-            </Link>
-          </li>
-          <li>
-            <Link to="/Blog">
-              Blog <BiCaretDown />
-            </Link>
-          </li>
           <li>
             <Link to="/buy">
               <BiCart style={{ width: "30px", height: "30px" }} />
@@ -37,8 +20,21 @@ const Navigation = () => {
           </li>
         </ul>
         <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/Blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/product">
+              product <BiCaretDown />
+            </Link>
+          </li>
+        </ul>
+        <ul>
           <li className="signin">
-            <Link to="/signin">SignIn</Link>
+            <Link to="/login">LogIn</Link>
           </li>
           <li className="signup">
             <Link to="/signup">SignUp</Link>

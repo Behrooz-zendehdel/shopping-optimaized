@@ -5,9 +5,18 @@
   padding: 0 50px;
   height: 50%;
 }
+.header {
+  background-image: url(../assets/free.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
 
 .section-title .title h1 {
   font-size: 30px;
+}
+.title {
+  margin-top: 8rem;
 }
 .section-image {
   width: 70%;

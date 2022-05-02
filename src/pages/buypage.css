@@ -37,9 +37,40 @@
   justify-content: center;
   margin-top: 4rem;
 }
-.productCenter .productItemList {
-}
-.delete {
+
+/* .delete {
   margin-left: 10px;
   background-color: red;
+} */
+
+.productItemSummery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.productItemSummery.hr {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.btnGroup {
+  outline: none;
+  color: #6d28d9;
+  border: 1px solid #6d28d9;
+  padding: 5px 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.btnGroup:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.btnGroup:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.btnGroup:nth-child(2) {
+  border-left: 0;
+  border-right: 0;
+  cursor: not-allowed;
 }

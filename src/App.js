@@ -4,11 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductPage from "./pages/ProductPage";
 import BlogPage from "./pages/BlogPage";
 import BuyPage from "./pages/BuyPage";
-import SignInPage from "./pages/SingInPage";
+import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import ProductProvider from "./Providers/ProductProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
           <Route path="/product" element={<ProductPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/buy" element={<BuyPage />} />
-          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </ProductProvider>
     </BrowserRouter>
