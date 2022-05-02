@@ -1,0 +1,47 @@
+.error {
+  color: red;
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+}
+input + label {
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+label {
+  display: flex;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+button {
+  padding: 5px 15px;
+  display: block;
+  cursor: pointer;
+}
+.formContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(212, 189, 189);
+}
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 400px;
+  padding: 9px 12px;
+  background-color: #fff;
+  outline: none;
+  color: #444;
+  border: none;
+  border-radius: 5px;
+  display: block;
+}

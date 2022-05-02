@@ -44,10 +44,20 @@ const BuyPage = () => {
                   </div>
                   <div> {item.name}</div>
                   <div> {item.price * item.quantity} $</div>
-                  <div>
-                    <button onClick={() => decHandler(item)} className="btnGroup">-</button>
+                  <div className="group">
+                    <button
+                      onClick={() => decHandler(item)}
+                      className="btnGroup"
+                    >
+                      -
+                    </button>
                     <button className="btnGroup">{item.quantity}</button>
-                    <button onClick={() => incHandler(item)} className="btnGroup">+</button>
+                    <button
+                      onClick={() => incHandler(item)}
+                      className="btnGroup"
+                    >
+                      +
+                    </button>
                     {/* <button
                       onClick={() => deleteHanlder(item)}
                       className="delete btn"

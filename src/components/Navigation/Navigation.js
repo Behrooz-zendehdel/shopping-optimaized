@@ -30,6 +30,7 @@ const Navigation = () => {
             <Link to="/product">
               product <BiCaretDown />
             </Link>
+           
           </li>
         </ul>
         <ul>

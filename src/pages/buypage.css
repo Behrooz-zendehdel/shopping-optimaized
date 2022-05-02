@@ -37,6 +37,12 @@
   justify-content: center;
   margin-top: 4rem;
 }
+.buying {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 /* .delete {
   margin-left: 10px;
@@ -53,11 +59,14 @@
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
 }
+.group {
+  display: flex;
+}
 
 .btnGroup {
   outline: none;
   color: #6d28d9;
-  border: 1px solid #6d28d9;
+  border: 2px solid #6d28d9;
   padding: 5px 10px;
   background-color: #fff;
   cursor: pointer;
@@ -66,8 +75,16 @@
 .btnGroup:first-child {
   border-radius: 5px 0 0 5px;
 }
+.btnGroup:first-child:hover {
+  background-color: #6d28d9;
+  color: #fff;
+}
 .btnGroup:last-child {
   border-radius: 0 5px 5px 0;
+}
+.btnGroup:last-child:hover {
+  background-color: #6d28d9;
+  color: #fff;
 }
 .btnGroup:nth-child(2) {
   border-left: 0;
