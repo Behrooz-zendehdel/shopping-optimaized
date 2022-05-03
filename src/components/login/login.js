@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import Input from "../../common/Input";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useState } from "react";
 import LoginUser from "../../services/loginService";
@@ -16,6 +16,7 @@ const validationSchema = Yup.object({
 });
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState(null);
   const onSubmit = async (values) => {
     console.log(values);
@@ -24,6 +25,7 @@ const LoginForm = () => {
       const { data } = await LoginUser(values);
       console.log(data);
       setError(null);
+      navigate("/product  ");
     } catch (error) {
       if (error.response && error.response.data.message)
         setError(error.response.data.message);
