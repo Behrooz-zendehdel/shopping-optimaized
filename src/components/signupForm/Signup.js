@@ -5,6 +5,7 @@ import "./signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signupUser } from "../../services/signupService";
 import { useState } from "react";
+import { useAuthActions } from "../../Providers/AuthProvider";
 
 const initialValues = {
   name: "",
@@ -40,6 +41,7 @@ const validationSchema = Yup.object({
 });
 
 const SignupForm = () => {
+  const setAuth = useAuthActions();
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
@@ -51,12 +53,12 @@ const SignupForm = () => {
       phoneNumber,
       password,
     };
-    setError(null);
     try {
       const { data } = await signupUser(userData);
-      navigate("/product");
-      // localStorage.setItem('authState',JSON.stringifY(data))
-      console.log(data);
+      setAuth(data);
+      localStorage.setItem("authState", JSON.stringify(data));
+      navigate("/");
+      setError(null);
     } catch (error) {
       console.log(error.response.data.message);
       if (error.response && error.response.data.message)

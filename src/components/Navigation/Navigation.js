@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import "./navigation.css";
 import { BiCart, BiCaretDown } from "react-icons/bi";
 import { useCart } from "../../Providers/ProductProvider";
+import { useAuth } from "../../Providers/AuthProvider";
 
 const Navigation = () => {
+  const userData = useAuth();
   const { cart } = useCart();
   return (
     <header>
@@ -30,15 +32,16 @@ const Navigation = () => {
             <Link to="/product">
               product <BiCaretDown />
             </Link>
-           
           </li>
         </ul>
         <ul>
           <li className="signin">
-            <Link to="/login">LogIn</Link>
+            <Link to={userData ? "/profile" : "/login"}>
+              {userData ? "profile" : "exit" }
+            </Link>
           </li>
           <li className="signup">
-            <Link to="/signup">SignUp</Link>
+            <Link to="/signup">{userData ? "exit" : ""}</Link>
           </li>
         </ul>
       </nav>
