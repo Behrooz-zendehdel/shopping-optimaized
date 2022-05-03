@@ -13,7 +13,7 @@
 }
 
 .section-title .title h1 {
-  font-size: 30px;
+  font-size: 40px;
 }
 .title {
   margin-top: 8rem;
@@ -38,9 +38,13 @@
   border-radius: 5px;
   margin: 10px 10px 0 0;
 }
+.btnhome:hover {
+  opacity: 50%;
+}
 .btn:hover {
   opacity: 80%;
 }
 .btn-title {
   text-align: left;
+  display: flex;
 }

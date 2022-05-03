@@ -36,12 +36,12 @@ const Navigation = () => {
         </ul>
         <ul>
           <li className="signin">
-            <Link to={userData ? "/profile" : "/login"}>
-              {userData ? "profile" : "exit" }
+            <Link to={userData ? "profile" : "/login"}>
+              {userData ? "profile" : "exit"}
             </Link>
           </li>
           <li className="signup">
-            <Link to="/signup">{userData ? "exit" : ""}</Link>
+            <Link to="/signup">{userData ? "logOut" : ""}</Link>
           </li>
         </ul>
       </nav>

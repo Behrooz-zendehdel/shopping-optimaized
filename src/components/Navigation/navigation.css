@@ -5,7 +5,7 @@ header {
 
 .mainNavigation {
   width: 100%;
-  height: 60px;
+  height: 70px;
   background-color: #e0e7ff;
   display: flex;
   justify-content: space-between;
@@ -43,8 +43,8 @@ header {
   color: #fff;
   border-radius: 50%;
   position: absolute;
-  right: 3px;
-  top: -2px;
+  right: 13px;
+  top: 0px;
 }
 .subMenu li {
   display: flex;

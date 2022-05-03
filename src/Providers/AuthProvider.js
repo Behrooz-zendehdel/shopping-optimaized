@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { useState } from "react";
 
 export const AuthProviderContext = createContext();
@@ -6,6 +6,10 @@ export const AuthProviderContextDispatcher = createContext();
 
 const AuthProvider = ({ children }) => {
   const [state, setState] = useState(false);
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("authState")) || false;
+    setState(userData);
+  }, []);
   return (
     <AuthProviderContext.Provider value={state}>
       <AuthProviderContextDispatcher.Provider value={setState}>
